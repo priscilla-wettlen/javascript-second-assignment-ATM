@@ -22,7 +22,7 @@ isNaN(variableName);
 alert("your code here and maybe properties");
 // of course you need to put a proper message and you might need to display some of the properties.
 
-// STARER FUNCTION
+// STARTER FUNCTION
 function atm() {
   let choice = parseInt(prompt("Display menu choices here"));
   //prompt user for choice.
