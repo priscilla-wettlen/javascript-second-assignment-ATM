@@ -39,23 +39,23 @@ const accountObject = {
   accountName: "Britney Spears",
   balance: 100,
   getBalance: function() {
-    if (choice === 1) {
-      alert(`Your balance is $${this.balance}`);
-    }
-
+    alert(`Your account balance is $${this.balance}`);
 },
   deposit: function() {
+    let dep = parseFloat(prompt("How much do you want to deposit? Enter a number"));
+    // check with ||, then call for this function inside of atm function
+    this.deposit();
     
   },
   withdrawal: function() {
-
+    //same as deposit, or similar
   },
   getAccountName: function() {
-
+  
     
   },
   accountError: function() {
-
+  //display an error msg and call for that after i do an error check
   },
   exitAccount: function () {
 
@@ -66,8 +66,11 @@ const accountObject = {
 function atm() {
 let choice = parseInt(prompt("Select an option. 1.)See balance 2.)Make a deposit 3.)Make a withdrawal 4.)Get account holder's name 5.)Exit"));
 if (choice === 1) {
-  alert(`Your account balance is $${accountObject.balance}`);
+  accountObject.getBalance();
+} else if (choice === 2){
+    
+  }
 }
-}
+//console log object.ldjajlk because we are already using the prompt
 
 atm();
