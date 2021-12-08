@@ -44,11 +44,13 @@ const accountObject = {
   deposit: function() {
     let dep = parseFloat(prompt("How much do you want to deposit? Enter an amount."));
     //Now MY OWN CODE is rebelling against me?! The audacity!
-    if (dep < 1 || NaN) {
-      this.accountError();
-    } else {
+    if (dep >= 1) {
       alert(`Your new balance is $${(this.balance) + (dep)}`);
-    } atm();
+      atm();
+    } else {
+      this.accountError();
+      this.deposit();
+    } 
     // check with ||, then call for this function inside of atm function
     // this.deposit();
     
@@ -82,8 +84,11 @@ if (choice === 1) {
     accountObject.getAccountName();
     atm();
   }  else if (choice === 5) {
-    self.close();
-  }
+    alert.close();
+  } else {
+    alert("Please select a valid option");
+    atm();
+  } 
 }
 //console log object.ldjajlk because we are already using the prompt
 
