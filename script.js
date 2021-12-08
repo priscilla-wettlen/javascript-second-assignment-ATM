@@ -42,7 +42,13 @@ const accountObject = {
     alert(`Your account balance is $${this.balance}`);
 },
   deposit: function() {
-    let dep = parseFloat(prompt("How much do you want to deposit? Enter a number"));
+    let dep = parseFloat(prompt("How much do you want to deposit? Enter an amount."));
+    //Now MY OWN CODE is rebelling against me?! The audacity!
+    if (dep != Number) {
+      this.accountError();
+    } else {
+      alert(`Your new balance is $${(this.balance) + (dep)}`);
+    }
     // check with ||, then call for this function inside of atm function
     this.deposit();
     
@@ -51,11 +57,12 @@ const accountObject = {
     //same as deposit, or similar
   },
   getAccountName: function() {
-  
+  alert(`${this.accountName}`);
     
   },
   accountError: function() {
-  //display an error msg and call for that after i do an error check
+  alert('Please enter a valid amount');
+
   },
   exitAccount: function () {
 
@@ -64,11 +71,15 @@ const accountObject = {
 };
 
 function atm() {
-let choice = parseInt(prompt("Select an option. 1.)See balance 2.)Make a deposit 3.)Make a withdrawal 4.)Get account holder's name 5.)Exit"));
+let choice = parseInt(prompt("Select an option by entering the corresponding number: 1)Check balance 2)Make a deposit 3)Make a withdrawal 4)Get account holder's name 5)Exit"));
 if (choice === 1) {
   accountObject.getBalance();
 } else if (choice === 2){
-    
+    accountObject.deposit();
+  } else if (choice === 3) {
+
+  } else if (choice === 4) {
+    accountObject.getAccountName();
   }
 }
 //console log object.ldjajlk because we are already using the prompt
