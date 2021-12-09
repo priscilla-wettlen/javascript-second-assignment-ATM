@@ -43,7 +43,7 @@ const accountObject = {
 },
   deposit: function() {
     let dep = parseFloat(prompt("How much do you want to deposit? Enter an amount."));
-    //Now MY OWN CODE is rebelling against me?! The audacity!
+    
     if (dep >= 1) {
       alert(`Your new balance is $${(this.balance) + (dep)}`);
       atm();
@@ -51,15 +51,21 @@ const accountObject = {
       this.accountError();
       this.deposit();
     } 
-    // check with ||, then call for this function inside of atm function
-    // this.deposit();
     
   },
   withdrawal: function() {
-    //same as deposit, or similar
+    let wit = parseFloat(prompt("How much do you want to withdraw? Enter an amount."));
+
+    if (wit >= 1) {
+      alert(`Your new balance is $${(this.balance) - (wit)}`);
+      atm();
+    } else {
+      this.accountError();
+      this.withdrawal();
+    }
   },
   getAccountName: function() {
-  alert(`${this.accountName}`); 
+  alert(`This account belongs to ${this.accountName}`); 
   },
   accountError: function() {
   alert('Please enter a valid amount');
@@ -79,6 +85,7 @@ if (choice === 1) {
 } else if (choice === 2){
     accountObject.deposit();
   } else if (choice === 3) {
+    accountObject.withdrawal();
 
   } else if (choice === 4) {
     accountObject.getAccountName();
