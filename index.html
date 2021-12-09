@@ -4,27 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>JavaScript Basics</title>
-    <style>
-      body {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        background: linear-gradient(to top left, #26984a, #8ed596);
-      }
-      h1 {
-        font-family: sans-serif;
-        font-size: 50px;
-        line-height: 1.3;
-        width: 100%;
-        padding: 30px;
-        text-align: center;
-        color: #ffffff;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>The ATM</title>
   </head>
   <body>
-    <h1>JavaScript Second Assignment - Bank Account</h1>
-    <script src="script.js"></script>
+    <header>
+    <h1>Welcome to the ATM</h1>
+    <h2>Please select an option from the following menu:</h2>
+    </header>
+    <div class="main">
+      <div class="card_1">
+        <button id="check-balance" onclick="getBalance()">Check Balance</button>
+        <button class="make-deposit">Make a Deposit</button>
+        <button class="make-withdrawal">Make a Withdrawal</button>
+      </div>
+      <div class="card_2">
+        <button id="acct-holder" onclick="accountObject.getAccountName()">Show Account Holder's Name</button>
+        <button class="exit">Exit</button>
+      </div>
+    </div>
   </body>
 </html>
