@@ -15,14 +15,15 @@
     </header>
     <div class="main">
       <div class="card_1">
-        <button id="check-balance" onclick="getBalance()">Check Balance</button>
-        <button class="make-deposit">Make a Deposit</button>
-        <button class="make-withdrawal">Make a Withdrawal</button>
+        <button id="check-balance" onclick="accountObject.getBalance()">Check Balance</button>
+        <button class="make-deposit" onclick="accountObject.deposit()">Make a Deposit</button>
+        <button class="make-withdrawal" onclick="accountObject.withdrawal()">Make a Withdrawal</button>
       </div>
       <div class="card_2">
         <button id="acct-holder" onclick="accountObject.getAccountName()">Show Account Holder's Name</button>
-        <button class="exit">Exit</button>
+        <button class="exit" onclick="alert('Operation finished. Press OK to close.')">Exit</button>
       </div>
     </div>
   </body>
 </html>
+

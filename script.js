@@ -1,4 +1,3 @@
-
 const accountObject = {
   accountName: "Britney Spears",
   balance: 100,
@@ -10,7 +9,7 @@ const accountObject = {
     if (dep >= 1) {
       alert(`Your new balance is $${(this.balance) + (dep)}`);
       console.log((this.balance) + (dep));
-      atm();
+      // atm();
     } else if (dep === null || " " || isNaN(dep)) {
       this.accountError();
       this.deposit();
@@ -22,7 +21,7 @@ const accountObject = {
     if (wit >= 1) {
       alert(`Your new balance is $${(this.balance) - (wit)}`);
       console.log((this.balance) - (wit));
-      atm();
+      // atm();
     } else if (wit > this.balance) {
       alert("Sorry, you do not have enough funds to complete this transaction.")
       this.withdrawal();
@@ -48,7 +47,7 @@ function atm() {
 let choice = parseInt(prompt("Welcome to the ATM. Please select an option from the following menu: 1)Check balance 2)Make a deposit 3)Make a withdrawal 4)Get account holder's name 5)Exit"));
   if (choice === 1) {
   accountObject.getBalance();
-  atm();
+  // atm();
   } else if (choice === 2){
     accountObject.deposit();
   } else if (choice === 3) {
@@ -56,12 +55,12 @@ let choice = parseInt(prompt("Welcome to the ATM. Please select an option from t
 
   } else if (choice === 4) {
     accountObject.getAccountName();
-    atm();
+    // atm();
   }  else if (choice === 5) {
     alert("Operation finished. Press OK to close.")
   } else {
     alert("Please select a valid option");
-    atm();
+    // atm();
   } 
 }
-atm();
+// atm();
