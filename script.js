@@ -43,10 +43,13 @@ const accountObject = {
 },
   deposit: function() {
     let dep = parseFloat(prompt("How much do you want to deposit? Enter an amount."));
-    
     if (dep >= 1) {
       alert(`Your new balance is $${(this.balance) + (dep)}`);
+      console.log((this.balance) + (dep));
       atm();
+    } else if (dep === null || " ") {
+      atm();
+
     } else {
       this.accountError();
       this.deposit();
@@ -55,9 +58,14 @@ const accountObject = {
   },
   withdrawal: function() {
     let wit = parseFloat(prompt("How much do you want to withdraw? Enter an amount."));
-
     if (wit >= 1) {
       alert(`Your new balance is $${(this.balance) - (wit)}`);
+      console.log((this.balance) - (wit));
+      atm();
+    } else if (wit > this.balance) {
+      alert("Sorry, you do not have enough funds to complete this transaction.")
+      this.withdrawal();
+    } else if (wit === null || " ") {
       atm();
     } else {
       this.accountError();
@@ -91,12 +99,10 @@ if (choice === 1) {
     accountObject.getAccountName();
     atm();
   }  else if (choice === 5) {
-    alert.close();
+    alert("Operation finished. Press OK to close.")
   } else {
     alert("Please select a valid option");
     atm();
   } 
 }
-//console log object.ldjajlk because we are already using the prompt
-
 atm();
