@@ -28,7 +28,7 @@ const accountObject = {
     } else if (wit === null || " " || isNaN(wit)) {
       this.accountError();
       this.withdrawal();
-    }
+    } 
   },
   getAccountName: function() {
   alert(`This account belongs to ${this.accountName}`); 
@@ -57,10 +57,18 @@ let choice = parseInt(prompt("Welcome to the ATM. Please select an option from t
     accountObject.getAccountName();
     // atm();
   }  else if (choice === 5) {
-    alert("Operation finished. Press OK to close.")
+    alert("Operation finished. Press OK to close.");
   } else {
     alert("Please select a valid option");
     // atm();
   } 
 }
 // atm();
+
+/* The reason why we use the parseInt and parseFloat methods is so that javascript can
+detect the numbers included in, for example, the menu options and provide the user 
+with the correct choice depending on their input */
+
+/* Some parts of the code don't make sense when connected to the DOM but they can be
+re-implemented if necessary by either uncommenting them on the JS file or commenting
+out the buttons on the index file */
