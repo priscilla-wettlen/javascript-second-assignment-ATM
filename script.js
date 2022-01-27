@@ -3,17 +3,21 @@ const accountObject = {
   balance: 100,
   getBalance: function() {
     alert(`Your account balance is $${this.balance}`);
+    console.log(this.balance);
   },
   deposit: function() {
-    let dep = parseFloat(prompt("How much would you like to deposit? Enter an amount."));
+    let dep = parseFloat(prompt("How much would you like to deposit? Enter an amount or enter 0 to cancel the operation."));
+    
     if (dep >= 1) {
       alert(`Your new balance is $${(this.balance) + (dep)}`);
       console.log((this.balance) + (dep));
       // atm();
-    } else if (dep === null || " " || isNaN(dep)) {
+    } else if (Number.isNaN(dep) ){
       this.accountError();
       this.deposit();
-    } 
+    } else {
+      this.cancelOperation();
+    }
     
   },
   withdrawal: function() {
@@ -40,6 +44,9 @@ const accountObject = {
   exitAccount: function () {
 
   },
+  cancelOperation: function() {
+    alert('Operation cancelled');
+  }
   
 };
 
@@ -64,6 +71,11 @@ let choice = parseInt(prompt("Welcome to the ATM. Please select an option from t
   } 
 }
 // atm();
+
+      //this.accountError();
+      //this.deposit();
+
+
 
 /* The reason why we use the parseInt and parseFloat methods is so that javascript can
 detect the numbers included in, for example, the menu options and provide the user 
